@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K.B.A Hostel</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+  	<script src="js/jquery.js"></script>
+  	<script src="js/bootstrap.js"></script>
+
+    <style>
+        .container {
+          padding:20px;
+          width:600px;
+          font-family:arial;
+
+        }
+        a{
+          color:#3366cc;
+        }
+        header{
+          font-family:arial;
+        }
+        h2{
+				font-size:25px;
+				font-family:times new roman;
+				}
+    </style>
+</head>
+    <body>
+
+
+
+
+      <header style="background:url('h5.jpg');   height:1000px;">
+        <br>
+        <br>
+            <div class="container "  style="border: 2px solid #3366cc ; border-radius:20px; background-color:white;   ">
+                <div class="page-header text-center   ">
+                  <h2>ENTER YOUR DETAILS</h2>
+                </div>
+               <form action="toadd" method="POST" >
+                     {% csrf_token %}
+
+
+
+               <div class="row">
+                    <div  class="form-group col-md-6  ">
+                      <label >NAME: </label>
+                      <input  type="text"  name="Name"  class="form-control"  placeholder="Enter Your Name" required>
+                    </div>
+
+                   <div  class="form-group col-md-6  ">
+                     <label >ID</label>
+                     <input type="number"  name="ID"  class="form-control" placeholder="Enter your ID" required>
+                   </div>
+               </div>
+
+
+
+
+               <div class="row">
+                  <div  class="form-group col-md-6  ">
+                    <label >AGE</label>
+                    <input type="number"  name="Age"  class="form-control" placeholder="Enter your age"required>
+                  </div>
+
+                  <div  class="form-group col-md-6">
+                    <div>
+                      <label>GENDER:</label>
+                    </div>
+                    <div >
+
+                      <label class="radio-inline"><input  type="radio"   name="Gender"  value="Male" checked> MALE</label>
+                      <label class="radio-inline"><input  type="radio"   name="Gender" value="Female">FEMALE</label>
+                    </div>
+                  </div>
+
+
+             </div>
+
+
+
+             <div class="row">
+               <div  class="form-group col-md-6  ">
+                 <label >MOBILE NUMBER:</label>
+                 <input  type="text" name="Mbno" class="form-control"  placeholder="Contact Number" required
+                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                 type = "number"
+                 maxlength = "10"/>
+
+               </div>
+                 <div  class="form-group col-md-6">
+                   <label >ALTERNATIVE NUMBER:</label>
+                   <input  type="text" name="Alternate_ContactNum" class="form-control"  placeholder="ALternative Number" required
+                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                   type = "number"
+                   maxlength = "10"/>
+                  </div>
+
+
+           </div>
+
+
+
+
+               <div class="row">
+                   <div  class="form-group col-md-6">
+                     <label > GMAIL:</label>
+                     <input type="email"  name="Gmail"  class="form-control"  placeholder="sample@abc.com" required>
+                   </div>
+                   <div  class="form-group col-md-6">
+                     <label >ADDRESS:</label>
+                     <textarea type="text" name="Address" class="form-control" rows="2" cols="80" placeholder="Enter your address" required></textarea>
+                   </div>
+
+
+             </div>
+
+             <div class="row">
+                 <div  class="form-group col-md-6">
+                   <label > DESIGNATION:</label>
+                   <input  type="text"  name="Designation"  class="form-control"  placeholder="Enter your designation" required>
+                 </div>
+                 <div  class="form-group col-md-6">
+                   <label >SALARY:</label>
+                   <input  type="text"  name="Salary"  class="form-control" placeholder="Salary" required>
+                 </div>
+
+
+           </div>
+           <br>
+           <br>
+
+              <div class="col-md-6 col-md-offset-2 row" >
+                 <button class="btn btn-primary" type="submit" value="update" class="form-control">SUBMIT</button>
+               </div>
+               </form>
+
+
+
+ <a href="{% url 'staff' %}"><button class="btn btn-primary">Go Back</button></a>
+                   <div class="col-md-8 col-md-offset-2 row" >
+                {% if messages %}
+               {% for message in messages %}
+                   <h2>{{message}}</h2>
+               {% endfor %}
+               {% endif %}
+                       </div>
+
+
+
+          </div>
+    		</header>
+
+
+
+    </body>
+</html>

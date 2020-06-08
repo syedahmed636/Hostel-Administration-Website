@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K.B.A Hostel</title>
+  	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+  	<script src="js/jquery.js"></script>
+  	<script src="js/bootstrap.js"></script>
+    <style>
+        .container {
+          padding:20px;
+          width:600px;
+          font-family:arial;
+
+        }
+        a{
+          color:#3366cc;
+          font-size:15px;
+        }
+        header{
+          font-family:arial;
+        }
+				header img {
+				  height:200px;
+				  width:200px;
+				  padding:20px;
+				  border-radius:60%;
+				}
+    </style>
+</head>
+    <body>
+
+      <header style="background:url('h5.jpg');   height:1000px;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+            <div class="container "  style="border: 2px solid #3366cc ; border-radius:20px; background-color:white;   ">
+                <div class="page-header text-center   ">
+                  	<h1>UPDATE USER</h1>
+                </div>
+									<br>
+										<br>
+
+
+
+							 <form class="form-horizontal" action="{{data.id}}" method="POST">
+                                 {% csrf_token %}
+
+
+							 	 <div class="form-group">
+							 		 <label class="col-md-5 control-label">USER NAME:</label>
+							 		 <div class="col-md-5">
+							 		  <input type="text" name="name" value="{{data.username}}" readonly class="form-control">
+							 		 </div>
+							 	 </div>
+
+							 	 <div class="form-group">
+							 		 <label class="col-md-5 control-label">FIRST NAME:</label>
+							 			 <div class="col-md-5">
+							 		 <input   type="text" name="first_name" value="{{data.first_name}}" required class="form-control">
+							 		 </div>
+							 	 </div>
+								 <div class="form-group">
+							 		 <label class="col-md-5 control-label">LAST NAME:</label>
+							 			 <div class="col-md-5">
+							 		 <input   type="text" name="last_name" value="{{data.last_name}}" required class="form-control">
+							 		 </div>
+							 	 </div>
+								 <div class="form-group">
+									 <label class="col-md-5 control-label">ID:</label>
+										 <div class="col-md-5">
+									 <input type="text" name="id" value="{{data.id}}" readonly class="form-control">
+									 </div>
+								 </div>
+								 <div class="form-group">
+							 		 <label class="col-md-5 control-label">EMAIL:</label>
+							 			 <div class="col-md-5">
+							 		 <input   type="email" name="email" value="{{data.email}}" readonly class="form-control">
+							 		 </div>
+							 	 </div>
+                   <div  class="form-group col-md-6  ">
+                 <label >SUPERUSER:</label>
+                 <select name="superuser"  class="form-control" required>
+                    <option value="{{data.is_superuser}}">{{data.is_superuser}}</option>
+                     {% if data.is_superuser %}
+                       <option value="False">False</option>
+                     {% else %}
+                   <option value="True">True</option>
+                    {% endif %}
+                 </select>
+               </div>
+                </div>
+								 <br>
+								 <br>
+						 	 <div class="col-md-4 col-md-offset-5">
+                                  <input type="submit" value="UPDATE" class="btn btn-primary"><br>
+								</div>
+
+								 <br>
+									<br>
+                  <br>
+ 									<br>
+
+							 </form>
+
+
+  <a href="http://127.0.0.1:8000/"><button class="btn btn-primary"><span class="glyphicon glyphicon-menu-left"></span>Go Back to Home Page</button></a>
+
+
+          </div>
+    		</header>
+
+
+
+    </body>
+</html>

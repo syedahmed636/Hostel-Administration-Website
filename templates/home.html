@@ -1,0 +1,176 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>K.B.A Hostel</title>
+	<link rel="stylesheet" href="{% static 'css/glyphicon.css' %}">
+  <link rel="stylesheet" href="{% static 'styleawz.css' %}">
+	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<script src="{ % static 'js/jquery.js' %}"></script>
+	<script src="{ % static 'js/bootstrap.js' %}"></script>
+</head>
+<body>
+  <nav class="navbar navbar-custom navbar-fixed-top">
+      <div class="container-fluid" >
+					<div1 class="navbar-header">
+         <a href="#" style="font-size:30px;" class="navbar-brand">THE HOSTEL SITE</a>
+          </div1>
+		  <ul class="nav navbar-nav navbar-right home">
+		  {% if user.is_authenticated %}
+
+			  <li><a href="aadmin/profile">PROFILE</a></li>
+          <li><a href="main/student">STUDENT</a></li>
+          <li><a href="main/staff">STAFF</a></li>
+
+   		  <li><a href="{% url 'password_change' %}">CHANGEPASS</a></li>
+
+			   <li><a href="accountslogin/logout" onclick=" return confirm('Are You sure you want to logout?');">LOGOUT</a></li>
+   			{% if user.is_superuser %}
+          <li><a href="aadmin/adminpanel">ADMIN PANEL</a></li>
+			   <li><a href="#">HELLO {{user.username}}</a></li>
+   			{% endif %}
+   			{% else %}
+             <li><a href="#">HOME</a></li>
+            <li><a href="#">CONTACT US</a></li>
+            <li><a href="#">ABOUT US</a></li>
+			  <li><a href="accountslogin/login">LOGIN</a></li>
+
+
+   {% endif %}
+
+          </ul>
+
+    </div>
+
+  </nav>
+  <header style="background:url('{% static 'h1.jpg'%}');height:690px;">
+			<div class="text-center">
+				<img src="{% static 'logo2.png'%}" alt="logo">
+					<h1>CRESCENT HOSTEL</h1>
+					<p>HOSTEL MADE HOME</p>
+					</div>
+		</header>
+
+
+			<div class=" container-fluid col-md-12 content block-a" style="background:WHITE;height:400px;">
+				<div class="col-md-5 col-md-offset-1 " >
+					<div  >
+					<h1>THE HOSPITALITY</h1>
+					<p><i>The quality of life is one of the most important factors considered by the students deciding
+						to stay in the College/University hostels. By quality, it is not just the rooms but also the
+						overall environment of the University campus.
+                        We, at KBA MEN'S hostel, provide a wide choice in selecting the type or rooms in a hostel to suit every budget,
+						with an aim of providing a decent stay and the best possible learning environment.
+						Os is one of the greenest Campuses' in the country with all the facilities that are expected from global Universities.
+						The stay at our campus provides a wealth of experience by developing qualities such as camaraderie and social responsibility. Our students comprise a cosmopolitan mix from all parts of India as well as many countries across the globe.
+					</i></p>
+						</div>
+				</div>
+				<div class="col-md-5  ">
+					<img src="{% static 'HOS.jpg'%}" alt="reading" class="img-responsive pull-right" style="width:600px;padding:30px;">
+				</div>
+			</div>
+
+
+			<div class="container-fluid col-md-12 content block-b" style=" padding:50px;background:skyblue;height:400px;">
+
+				<div class="col-md-5 col-md-offset-1 ">
+					<div class="embed-responsive embed-responsive-16by9 mb-4">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/j1kdWzhOgZc">
+
+            </iframe>
+        </div>
+				</div>
+				<div class="col-md-5  block-a" >
+					<h1>REVIEW IN YOUTUBE </h1>
+					<p><i>B. S. Abdur Rahman University is a UGC approved private university which was earlier known as
+						 B.S. Abdur Rahman Crescent Engineering College. It offers courses in Sciences, Architecture, Business, Humanities,  Physical Education and more.
+					</i></p>
+				</div>
+			</div>
+
+
+		<div class="container-fluid" style="padding:0px;background:black">
+			<div class=" container-fluid col-md-12 content block-a" style=" padding:50px;height:400px;">
+				<div class="col-md-5 col-md-offset-1 " >
+					<h1 style="color:white">GYM FACITITY</h1>
+					<p style="color:white"><i>We provide a great oprtunity for the students for physical development and the well being of the individual
+					.Even though the acadamics a important, the care for your body never concidered a exception in life.so, provide a gym facility for he students in side the hostel Campuses
+						which is less the 100m from your rooms and the best thing about it is its totally free for all.</i>
+									</p>
+				</div>
+				<div class="col-md-5 ">
+					<img src="{% static 'gym.jpg'%}" alt="reading" class="img-responsive pull-right">
+				</div>
+			</div>
+		</div>
+  <div class="container-fluid" style="padding:0px;">
+			<div class=" container-fluid col-md-12 content block-b"  style=" padding:50px;background:#e3f6f5;height:400px;">
+
+				<div class="col-md-5 col-md-offset-1 ">
+					<img src="{% static 'Mas.jpg'%}" alt="reading" class="img-responsive">
+				</div>
+				<div class="col-md-5  block-a" >
+					<h1 style="color:black">MOSQUE FACILITY</h1>
+					<p><i style="color:black">As a college who supports the islamic interest of the students we as a hostel also provide a amazing ambiance for the students to practice their religion .
+						Our mosque has amazing ventilation and can hold upto 2000 students.</i>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+
+
+
+
+
+		<footer class="page-footer font-large special-color-dark pt-4">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/kba.menshostel">
+          <i class="fab fa-facebook-f fa-4x"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology">
+          <i class="fab fa-twitter fa-4x"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology" >
+
+          <i class="fab fa-google-plus-g fa-4x"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology">
+          <i class="fab fa-linkedin-in fa-4x"> </i>
+        </a>
+      </li>
+
+    </ul>
+    <!-- Social buttons -->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+		  Copyright © 2020
+    </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+</html>

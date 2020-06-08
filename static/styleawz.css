@@ -1,0 +1,65 @@
+.navbar-custom{
+
+}
+position:absolute;
+top:0;
+width:100%;
+
+nav li  {
+  color:white ;
+    font-size:15px;
+    Padding:10px;
+
+}
+.nav li a :hover{
+  background-color:black;
+
+
+}
+
+.home li{
+
+    color:white;
+}
+header{
+  height:800px;
+  color:white;
+  background:orange;
+  padding:80px;
+}
+header p{
+font-size:30px;
+text-shadow: 2px 2px 5px black;
+}
+header h1{
+font-size:40px;
+text-shadow: 3px 3px 8px black;
+}
+
+header img {
+  height:200px;
+  width:200px;
+  padding:20px;
+  border-radius:60%;
+}
+img{
+  width:600px;
+}
+.block-a{
+  font-size:17px;
+}
+.block-b{
+  font-size:17px;
+}
+p{
+font-family:times new roman;
+
+}
+footer {
+  background-color:lightblue;
+  padding:40px;
+
+}
+footer i{
+  padding:10px;
+}

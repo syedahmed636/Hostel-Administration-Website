@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K.B.A Hostel</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+  	<script src="js/jquery.js"></script>
+  	<script src="js/bootstrap.js"></script>
+
+    <style>
+        .container {
+          padding:20px;
+          width:600px;
+          font-family:arial;
+
+        }
+        a{
+          color:white;
+        }
+        header{
+          font-family:arial;
+        }
+        h2{
+				font-size:25px;
+				font-family:times new roman;
+				}
+    </style>
+</head>
+    <body>
+
+
+
+
+      <header style="background:url('h5.jpg');   height:1000px;">
+        <br>
+        <br>
+            <div class="container "  style="border: 2px solid #3366cc ; border-radius:20px; background-color:white;   ">
+                <div class="page-header text-center   ">
+                  <h2>ENTER YOUR DETAILS</h2>
+                </div>
+               <form action="add" method="post" >
+                     {% csrf_token %}
+
+
+
+               <div class="row">
+                    <div  class="form-group col-md-6  ">
+                      <label >NAME: *</label>
+                      <input  type="text"  name="Name"  class="form-control"  placeholder="Enter your name" required>
+                    </div>
+
+                   <div  class="form-group col-md-6  ">
+                     <label >ID*</label>
+                     <input type="number"  name="Id"  class="form-control" placeholder="Your RRN" required>
+                   </div>
+               </div>
+
+
+
+
+               <div class="row">
+                  <div  class="form-group col-md-6  ">
+                    <label >YEAR *</label>
+                    <select name="Year"  class="form-control"  required>
+                      <option value="">SELECT YOUR YEAR</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="PG">PG</option>
+
+                    </select>
+                  </div>
+
+                  <div  class="form-group col-md-6  ">
+                 <label >Academic Year:</label>
+                 <select name="Academicyear"  class="form-control" required>
+                    <option value="">Academic Year</option>
+                    <option value="2017-18">2017-18</option>
+                   <option value="2018-19">2018-19</option>
+                   <option value="2019-20">2019-20</option>
+                   <option value="2020-21">2020-21</option>
+                 </select>
+               </div>
+
+
+             </div>
+
+
+
+             <div class="row">
+               <div  class="form-group col-md-6">
+                 <label > ROOM ALLOTTED:</label>
+                 <input type="text"  name="Roomalloted"  class="form-control"  placeholder="Room number"required>
+               </div>
+               <div  class="form-group col-md-6  ">
+                 <label >DEPARTMENT:</label>
+                 <select name="Dept"  class="form-control" required>
+                    <option value="">SELECT YOUR DEPARTMENT</option>
+                   <option value="CSE">CSE</option>
+                   <option value="MECH">MECH</option>
+                   <option value="ECE">ECE</option>
+                   <option value="EEE">EEE</option>
+                 </select>
+               </div>
+
+
+               </div>
+
+
+
+
+               <div class="row">
+                   <div  class="form-group col-md-6">
+                     <label > GMAIL:</label>
+                     <input type="email"  name="Gmail"  class="form-control"  placeholder="sample@abc.com" required>
+                   </div>
+                   <div class="form-group col-md-6">
+                   <div>
+                     <label>GENDER:</label>
+                   </div>
+                   <div>
+
+                     <label class="radio-inline"><input  type="radio"   name="Gender"  value="Male" checked> MALE</label>
+                     <label class="radio-inline"><input  type="radio"   name="Gender" value="Female" >FEMALE</label>
+                   </div>
+                   </div>
+
+
+             </div>
+
+
+             <div class="row">
+               <div  class="form-group col-md-6  ">
+                 <label >MOBILE NUMBER:</label>
+                 <input  type="text" name="Mbno" class="form-control"  placeholder="Personal Number" required
+                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                 type = "number"
+                 maxlength = "10"/>
+
+               </div>
+                 <div  class="form-group col-md-6">
+                   <label >   PARENTS NUMBER:</label>
+                   <input  type="text" name="Mb2" class="form-control"  placeholder="Emergency number" required
+                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                   type = "number"
+                   maxlength = "10"/>
+                  </div>
+
+
+           </div>
+
+
+
+             <div class="row">
+                 <div  class="form-group col-md-6">
+                   <label > FEES STATUS:</label>
+                   <input  type="text"  name="Fees"  class="form-control"  placeholder="Amount paid"required>
+                 </div>
+                 <div  class="form-group col-md-6">
+                   <label >   CAUTION DEPOSITE:</label>
+                   <input  type="text"  name="Cd"  class="form-control" placeholder="" required>
+                 </div>
+
+
+           </div>
+           <br>
+
+           <br>
+
+              <div class="col-md-6 col-md-offset-2" >
+                 <button class="btn btn-primary" type="submit"  class="form-control">ADD</button>
+
+               </div>
+
+               <div>
+               <a href="{% url 'student' %}"><button  class="btn btn-primary" ><span class="glyphicon glyphicon-menu-left"></span>Go Back</a>
+               </div>
+                    <div class="col-md-8 col-md-offset-2">
+                   {% if messages %}
+               {% for message in messages %}
+                   <h2>{{message}}</h2>
+               {% endfor %}
+               {% endif %}
+                  </div>
+               </form>
+
+
+
+          </div>
+    		</header>
+
+
+
+    </body>
+</html>

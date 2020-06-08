@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K.B.A Hostel</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+  	<script src="js/jquery.js"></script>
+  	<script src="js/bootstrap.js"></script>
+
+    <style>
+        .container {
+          padding:20px;
+          width:600px;
+          font-family:arial;
+
+        }
+        a{
+          color:#3366cc;
+        }
+         h2{
+				font-size:30px;
+				font-family:times new roman;
+				}
+        header{
+
+
+        }
+    </style>
+</head>
+    <body>
+
+      <header  class="container-fluid " >
+        <br>
+        <br>
+            <div class="container-fluid "  style="border: 2px solid #3366cc ; border-radius:20px; background-color:white;   ">
+                <div class="page-header text-center  ">
+                  <h2>ALL DETAILS</h2>
+                   </div>
+
+                 <table class="table table-striped table-bordered table-hover tabel-responsive">
+
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>ID</th>
+                      <th>Year</th>
+                      <th>DEPT</th>
+                      <th>PH.NO</th>
+                      <th>GENDER</th>
+                      <th>GMAIL</th>
+                      <th>ROOM ALLOTED</th>
+                      <th>AMOUNT PAID</th>
+                      <th>ACADEMIC YEAR</th>
+                      <th>PARENT PHNO</th>
+                      <th>CAUTION DEPOSIT</th>
+                      <th>UPDATE</th>
+                      <th>DELETE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {% if data %}
+                    {% for dt in data %}
+                    <tr>
+
+                      <td>{{dt.Name}}</td>
+                      <td>{{dt.ID}}</td>
+                      <td>{{dt.Year}}</td>
+                      <td>{{dt.Dept}}</td>
+                      <td>{{dt.Mbno}}</td>
+                      <td>{{dt.Gender}}</td>
+                      <td>{{dt.Gmail}}</td>
+                      <td>{{dt.Roomalloted}}</td>
+                      <td>{{dt.AmountPaid}}</td>
+                      <td>{{dt.Academicyear}}</td>
+                      <td>{{dt.ParentMbno}}</td>
+                      <td>{{dt.CautionDeposit}}</td>
+                       <td><a href="toupdate/{{dt.ID}}"><button  class="btn btn-primary" ><span class="glyphicon glyphicon-pencil"></span>    EDIT</button></a></td>
+                       <td><a href="todelete/{{dt.ID}}" onclick=" return confirm('Are You sure you want to Delete?');"><button  class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span>    DELETE</button></a></td>
+
+
+                    </tr>
+                  {% endfor %}
+              {% endif %}
+
+
+
+                     </tbody>
+                </table>
+                <br>
+
+               <div class="col-md-4 col-md-offset-11">
+                 <a href="{% url 'student' %}"><button  class="btn btn-primary" ><span class="glyphicon glyphicon-menu-left"></span>  Go Back</button></a>
+
+               </div>
+                 <br>
+               {% if messages %}
+               {% for message in messages %}
+                   <h2>{{message}}</h2>
+               {% endfor %}
+               {% endif %}
+               <br>
+               <br>
+
+
+
+
+
+          </div>
+    		</header>
+
+
+
+    </body>
+</html>

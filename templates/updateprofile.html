@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K.B.A Hostel</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  	<link rel="stylesheet" href="css/glyphicon.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+  	<script src="js/jquery.js"></script>
+  	<script src="js/bootstrap.js"></script>
+
+    <style>
+        .container {
+          padding:20px;
+          width:600px;
+          font-family:arial;
+
+        }
+        a{
+          color:#3366cc;
+        }
+        header{
+          font-family:arial;
+        }
+    </style>
+</head>
+    <body>
+
+      <header style="background:url('h5.jpg');   height:1000px;">
+        <br>
+        <br>
+            <div class="container "  style="border: 2px solid #3366cc ; border-radius:20px; background-color:white;   ">
+                <div class="page-header text-center   ">
+                  <h2>UPDATE PROFILE</h2>
+                </div>
+                <br>
+                <br>
+
+
+               <form action="{{user.id}}" method="post"class="form-horizontal">
+                   {% csrf_token %}
+
+
+                 <div class="form-group">
+                   <label class="col-md-5 control-label">USER NAME:</label>
+                   <div class="col-md-5">
+                    <input type="text" value="{{user.username}}" required  class="form-control">
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label class="col-md-5 control-label">FIRST NAME:</label>
+                     <div class="col-md-5">
+                   <input   type="text"  value="{{user.first_name}}" name="first_name" required class="form-control">
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <label class="col-md-5 control-label">LAST NAME:</label>
+                     <div class="col-md-5">
+                   <input   type="text"   value="{{user.last_name}}" name="last_name"required class="form-control">
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <label class="col-md-5 control-label">ID:</label>
+                     <div class="col-md-5">
+                   <input type="number" value="{{user.id}}" name="id" readonly class="form-control">
+                   </div>
+                 </div>
+                 <div class="form-group">
+                   <label class="col-md-5 control-label">EMAIL:</label>
+                     <div class="col-md-5">
+                   <input   type="email"  value="{{user.email}}" name="email" required class="form-control">
+                   </div>
+                 </div>
+                 <br>
+                 <br>
+               <div class="col-md-4 col-md-offset-5">
+                           <input type="submit" value="UPDATE" class="btn btn-primary"><br>
+               </div>
+
+                 <br>
+                  <br>
+                  <br>
+                  <br>
+
+
+               </form>
+                <a href="http://127.0.0.1:8000/"><button class="btn btn-primary"><span class="glyphicon glyphicon-menu-left"></span>Go Back to Home Page</button></a>
+
+
+
+          </div>
+    		</header>
+
+
+
+    </body>
+</html>
